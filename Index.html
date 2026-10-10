@@ -1,0 +1,909 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Ruby Beauty Clinic - Ruby Makeover, Muzaffarnagar. Professional bridal makeup, hair styling, facials, skincare, nails and beauty services. Book your appointment today.">
+
+<title>Ruby Beauty Clinic | Ruby Makeover</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+  --pink: #c96c83;
+
+  --dark: #2b2024;
+
+  --cream: #fff8f5;
+
+  --gold: #c8a46b;
+
+  --muted: #776a6c;
+
+  --white: #ffffff;
+
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+
+  font-family:'DM Sans',sans-serif;
+
+  color:var(--dark);
+
+  background:var(--cream);
+
+  line-height:1.7;
+
+}
+
+a { text-decoration:none; color:inherit; }
+
+button { font:inherit; }
+
+.container { width:min(1160px,90%); margin:auto; }
+
+.topbar {
+
+  background:var(--dark); color:#fff;
+
+  text-align:center; padding:9px 15px;
+
+  font-size:12px; letter-spacing:1px;
+
+}
+
+header {
+
+  background:rgba(255,248,245,.97);
+
+  position:sticky; top:0; z-index:100;
+
+  border-bottom:1px solid #f0e3e1;
+
+}
+
+.nav {
+
+  display:flex; align-items:center; justify-content:space-between;
+
+  min-height:82px; gap:20px;
+
+}
+
+.logo { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; line-height:1.2; }
+
+.logo span { display:block; font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:4px; color:var(--pink); text-transform:uppercase; margin-top:5px; }
+
+.navlinks { display:flex; gap:27px; align-items:center; font-size:13px; }
+
+.navlinks a:hover { color:var(--pink); }
+
+.btn {
+
+  display:inline-block; padding:13px 23px;
+
+  background:var(--pink); color:white; border-radius:3px;
+
+  font-size:13px; font-weight:700; border:1px solid var(--pink);
+
+  transition:.25s; cursor:pointer;
+
+}
+
+.btn:hover { background:#ad536b; border-color:#ad536b; transform:translateY(-2px); }
+
+.btn-outline { background:transparent; color:var(--dark); border-color:#d9b6bb; }
+
+.btn-outline:hover { color:#fff; }
+
+.hero {
+
+  min-height:620px; display:flex; align-items:center;
+
+  background:linear-gradient(90deg,rgba(35,22,27,.77),rgba(35,22,27,.16)),
+
+  url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=2000&q=85') center 35%/cover;
+
+  color:white;
+
+}
+
+.hero-content { max-width:650px; padding:100px 0; }
+
+.eyebrow { color:#e9c69c; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; }
+
+h1,h2,h3 { font-family:'Playfair Display',serif; font-weight:500; line-height:1.2; }
+
+h1 { font-size:clamp(42px,6vw,76px); margin:20px 0; }
+
+.hero p { max-width:490px; font-size:16px; color:#f5e8e8; margin-bottom:28px; }
+
+.hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+
+.hero .btn-outline { color:white; border-color:#fff; }
+
+.stats { background:white; border-bottom:1px solid #f0e4e0; }
+
+.stats-grid { display:grid; grid-template-columns:repeat(3,1fr); padding:26px 0; text-align:center; }
+
+.stat { border-right:1px solid #eee1df; }
+
+.stat:last-child { border:0; }
+
+.stat strong { display:block; font-size:25px; font-family:'Playfair Display',serif; color:var(--pink); }
+
+.stat span { font-size:12px; color:var(--muted); }
+
+section { padding:90px 0; }
+
+.section-heading { text-align:center; max-width:650px; margin:0 auto 45px; }
+
+.section-heading .eyebrow { color:var(--pink); }
+
+.section-heading h2 { font-size:clamp(32px,4vw,47px); margin:12px 0; }
+
+.section-heading p { color:var(--muted); font-size:14px; }
+
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:65px; align-items:center; }
+
+.about-img {
+
+  min-height:460px; border-radius:180px 180px 5px 5px;
+
+  background:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85') center/cover;
+
+}
+
+.about-copy h2 { font-size:43px; margin:15px 0 20px; }
+
+.about-copy p { color:var(--muted); margin-bottom:17px; font-size:14px; }
+
+.checks { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0; font-size:13px; }
+
+.checks span:before { content:'✦ '; color:var(--pink); }
+
+.services { background:#f8eeeb; }
+
+.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+
+.service-card { background:white; padding:30px 25px; border:1px solid #f1e5e1; transition:.25s; }
+
+.service-card:hover { transform:translateY(-5px); box-shadow:0 15px 40px #4c2d3510; }
+
+.service-icon { font-size:28px; margin-bottom:17px; }
+
+.service-card h3 { font-size:24px; margin-bottom:12px; }
+
+.service-card p { color:var(--muted); font-size:13px; margin-bottom:17px; }
+
+.service-card a { font-size:12px; color:var(--pink); font-weight:700; }
+
+.bridal {
+
+  background:linear-gradient(90deg,rgba(38,22,28,.86),rgba(38,22,28,.30)),
+
+  url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1800&q=85') center/cover;
+
+  color:white;
+
+}
+
+.bridal-content { max-width:590px; }
+
+.bridal h2 { font-size:clamp(37px,5vw,57px); margin:17px 0; }
+
+.bridal p { color:#f3e7e7; margin-bottom:25px; }
+
+.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+
+.gallery-grid img { width:100%; height:320px; object-fit:cover; display:block; transition:.4s; }
+
+.gallery-item { overflow:hidden; background:#f0e1df; }
+
+.gallery-item:hover img { transform:scale(1.04); }
+
+.reviews { background:#f8eeeb; }
+
+.review-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+
+.review-card { background:white; padding:30px; border:1px solid #eee0dc; }
+
+.stars { color:#c89b4c; letter-spacing:3px; }
+
+.review-card p { color:var(--muted); font-size:14px; margin:18px 0; }
+
+.review-card strong { font-size:13px; }
+
+.review-note { text-align:center; font-size:12px; color:var(--muted); margin-top:22px; }
+
+.booking-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:50px; }
+
+.booking-info h2 { font-size:42px; margin:12px 0 20px; }
+
+.booking-info p { color:var(--muted); font-size:14px; margin-bottom:22px; }
+
+.contact-line { padding:17px 0; border-bottom:1px solid #eadbd7; font-size:13px; }
+
+.contact-line strong { display:block; margin-bottom:5px; }
+
+form { background:white; padding:30px; border:1px solid #eee2df; }
+
+form h3 { font-size:27px; margin-bottom:20px; }
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+
+label { display:block; font-size:12px; margin:0 0 6px; font-weight:600; }
+
+input,select,textarea {
+
+  width:100%; padding:12px; border:1px solid #e4d7d3;
+
+  background:#fffdfc; border-radius:2px; font:inherit; font-size:13px;
+
+  margin-bottom:16px; outline-color:var(--pink);
+
+}
+
+textarea { min-height:90px; resize:vertical; }
+
+form .btn { width:100%; }
+
+footer { background:var(--dark); color:white; padding:45px 0 20px; }
+
+.footer-top { display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; align-items:center; }
+
+footer p { font-size:12px; color:#d2c1c4; margin-top:10px; }
+
+.footer-links { display:flex; gap:20px; flex-wrap:wrap; font-size:12px; }
+
+.footer-bottom { margin-top:30px; padding-top:18px; border-top:1px solid #514147; font-size:11px; color:#bba9ae; }
+
+.whatsapp-float {
+
+  position:fixed; right:20px; bottom:20px; z-index:200;
+
+  background:#25d366; color:white; padding:13px 18px;
+
+  border-radius:50px; box-shadow:0 5px 20px #0002;
+
+  font-size:13px; font-weight:700;
+
+}
+
+@media(max-width:850px) {
+
+  .navlinks { gap:12px; }
+
+  .navlinks a:not(.btn) { display:none; }
+
+  .about-grid,.booking-grid { grid-template-columns:1fr; gap:35px; }
+
+  .about-img { min-height:380px; }
+
+  .service-grid { grid-template-columns:repeat(2,1fr); }
+
+  .gallery-grid img { height:240px; }
+
+  .review-grid { grid-template-columns:1fr; }
+
+}
+
+@media(max-width:520px) {
+
+  .logo { font-size:20px; }
+
+  .nav { min-height:72px; }
+
+  .nav .btn { padding:10px 12px; font-size:11px; }
+
+  .hero { min-height:570px; background-position:58% center; }
+
+  section { padding:65px 0; }
+
+  .stats-grid { padding:20px 0; }
+
+  .stat strong { font-size:21px; }
+
+  .stat span { font-size:10px; }
+
+  .service-grid,.gallery-grid { grid-template-columns:1fr; }
+
+  .gallery-grid img { height:330px; }
+
+  .form-row { grid-template-columns:1fr; gap:0; }
+
+  form { padding:22px; }
+
+  .about-copy h2,.booking-info h2 { font-size:35px; }
+
+  .checks { grid-template-columns:1fr; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+  BEAUTY • CONFIDENCE • ELEGANCE &nbsp; | &nbsp; MUZAFFARNAGAR, UTTAR PRADESH
+
+</div>
+
+<header>
+
+  <div class="container nav">
+
+    <a class="logo" href="#home">
+
+      Ruby Beauty Clinic
+
+      <span>Ruby Makeover</span>
+
+    </a>
+
+    <nav class="navlinks">
+
+      <a href="#home">Home</a>
+
+      <a href="#about">About</a>
+
+      <a href="#services">Services</a>
+
+      <a href="#gallery">Gallery</a>
+
+      <a href="#contact">Contact</a>
+
+      <a class="btn" href="#booking">Book Appointment</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">Your Beauty, Our Passion</div>
+
+      <h1>Reveal the most beautiful version of you.</h1>
+
+      <p>Discover personalised beauty, glowing skin, gorgeous hair and unforgettable bridal makeovers at Ruby Beauty Clinic.</p>
+
+      <div class="hero-actions">
+
+        <a class="btn" href="#booking">Book Your Appointment ↗</a>
+
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="stats">
+
+  <div class="container stats-grid">
+
+    <div class="stat"><strong>4.8 ★</strong><span>Google Rating</span></div>
+
+    <div class="stat"><strong>1,800+</strong><span>Customer Reviews</span></div>
+
+    <div class="stat"><strong>Beauty First</strong><span>Personalised Care</span></div>
+
+  </div>
+
+</div>
+
+<section id="about">
+
+  <div class="container about-grid">
+
+    <div class="about-img" role="img" aria-label="Professional beauty salon"></div>
+
+    <div class="about-copy">
+
+      <div class="eyebrow">Welcome to Ruby</div>
+
+      <h2>Beauty is personal. Your care should be too.</h2>
+
+      <p>Welcome to Ruby Beauty Clinic – Ruby Makeover, your beauty destination in Muzaffarnagar. We bring together beauty care, hair styling, skincare and special-occasion makeovers.</p>
+
+      <p>Whether you are getting ready for your wedding, a celebration or simply treating yourself, our goal is to help you look and feel your best.</p>
+
+      <div class="checks">
+
+        <span>Bridal Makeovers</span>
+
+        <span>Hair Styling</span>
+
+        <span>Skin & Facials</span>
+
+        <span>Nail Care</span>
+
+      </div>
+
+      <a class="btn" href="#booking">Plan Your Visit</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="services" id="services">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">What We Offer</div>
+
+      <h2>Our Beauty Services</h2>
+
+      <p>From everyday grooming to your most special occasions, find the right beauty service for you.</p>
+
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+
+        <div class="service-icon">✦</div>
+
+        <h3>Bridal Makeup</h3>
+
+        <p>Beautiful bridal looks and occasion makeup tailored to your outfit, style and special day.</p>
+
+        <a href="#booking">ENQUIRE NOW ↗</a>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">♡</div>
+
+        <h3>Facials & Skincare</h3>
+
+        <p>Personalised facial and skincare services to complement your beauty and self-care routine.</p>
+
+        <a href="#booking">ENQUIRE NOW ↗</a>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">✂</div>
+
+        <h3>Hair Styling</h3>
+
+        <p>Haircuts, blow dries, styling, hair colouring and looks for everyday wear or special events.</p>
+
+        <a href="#booking">ENQUIRE NOW ↗</a>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">❀</div>
+
+        <h3>Nails & Manicure</h3>
+
+        <p>Manicures, pedicures and acrylic nail services for a polished, well-groomed finish.</p>
+
+        <a href="#booking">ENQUIRE NOW ↗</a>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">☼</div>
+
+        <h3>Waxing & Threading</h3>
+
+        <p>Beauty grooming services including eyebrow shaping, threading and waxing.</p>
+
+        <a href="#booking">ENQUIRE NOW ↗</a>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="service-icon">◈</div>
+
+        <h3>Lashes & Brows</h3>
+
+        <p>Explore lash extensions, lash lifts, brow shaping and other eye-beauty services.</p>
+
+        <a href="#booking">ENQUIRE NOW ↗</a>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="bridal">
+
+  <div class="container">
+
+    <div class="bridal-content">
+
+      <div class="eyebrow">For Your Special Day</div>
+
+      <h2>Your dream bridal look starts here.</h2>
+
+      <p>Make your wedding moments even more memorable with a personalised bridal beauty experience. Contact us to discuss your look, services and availability.</p>
+
+      <a class="btn" href="#booking">Enquire About Bridal Makeup ↗</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="gallery">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">Our Inspiration</div>
+
+      <h2>The Beauty Gallery</h2>
+
+      <p>Explore beauty, hair and makeup inspiration for your next look.</p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=700&q=85" alt="Beauty and makeup inspiration" loading="lazy"></div>
+
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85" alt="Professional beauty portrait" loading="lazy"></div>
+
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Hair and beauty styling inspiration" loading="lazy"></div>
+
+    </div>
+
+    <p class="review-note">Gallery images are illustrative inspiration. Replace them with actual salon work and client photos, with permission.</p>
+
+  </div>
+
+</section>
+
+<section class="reviews">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">Client Trust</div>
+
+      <h2>Our Reputation Matters</h2>
+
+      <p>Choose a beauty experience that makes you feel confident and cared for.</p>
+
+    </div>
+
+    <div class="review-grid">
+
+      <article class="review-card">
+
+        <div class="stars">★★★★★</div>
+
+        <p>See what local customers are saying about their experience at Ruby Beauty Clinic.</p>
+
+        <strong>Customer Reviews</strong>
+
+      </article>
+
+      <article class="review-card">
+
+        <div class="stars">★★★★★</div>
+
+        <p>Explore feedback about beauty services, hair styling and special-occasion makeovers.</p>
+
+        <strong>Beauty & Styling</strong>
+
+      </article>
+
+      <article class="review-card">
+
+        <div class="stars">★★★★★</div>
+
+        <p>Read genuine reviews to help you choose the right service for your next visit.</p>
+
+        <strong>Local Clients</strong>
+
+      </article>
+
+    </div>
+
+    <p class="review-note">Listed Google rating: 4.8/5 from approximately 1,809 reviews, as provided. Review text above is illustrative, not quoted customer feedback.</p>
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <div class="container booking-grid">
+
+    <div class="booking-info">
+
+      <div class="eyebrow">Visit Our Salon</div>
+
+      <h2>Let's get you ready to glow.</h2>
+
+      <p>Have a question about a service or planning your bridal makeover? Contact us to discuss your requirements and appointment availability.</p>
+
+      <div class="contact-line">
+
+        <strong>📍 Our Address</strong>
+
+        786/40, Meerut Road, Yogenderpuri, Qidwai Nagar,<br>
+
+        Muzaffarnagar, Uttar Pradesh 251002
+
+      </div>
+
+      <div class="contact-line">
+
+        <strong>🕒 Opening Hours</strong>
+
+        Monday–Saturday: Please confirm current timings<br>
+
+        Sunday: Opens at 10:00 AM, as listed
+
+      </div>
+
+      <div class="contact-line">
+
+        <strong>💬 WhatsApp Booking</strong>
+
+        Send us your service enquiry and preferred date.
+
+      </div>
+
+      <p style="margin-top:22px">
+
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ruby+Beauty+Clinic+Ruby+Makeover+Muzaffarnagar">Get Directions ↗</a>
+
+      </p>
+
+    </div>
+
+    <div id="booking">
+
+      <form id="bookingForm">
+
+        <h3>Book an Appointment</h3>
+
+        <p style="font-size:12px;color:#776a6c;margin-bottom:20px">Fill in your details to send an appointment enquiry on WhatsApp.</p>
+
+        <label for="name">Your Name *</label>
+
+        <input id="name" name="name" type="text" placeholder="Enter your full name" required>
+
+        <div class="form-row">
+
+          <div>
+
+            <label for="phone">Your Phone Number *</label>
+
+            <input id="phone" name="phone" type="tel" placeholder="Mobile number" required>
+
+          </div>
+
+          <div>
+
+            <label for="date">Preferred Date *</label>
+
+            <input id="date" name="date" type="date" required>
+
+          </div>
+
+        </div>
+
+        <label for="service">Select a Service *</label>
+
+        <select id="service" name="service" required>
+
+          <option value="">Choose a service</option>
+
+          <option>Bridal Makeup</option>
+
+          <option>Party Makeup</option>
+
+          <option>Facial & Skincare</option>
+
+          <option>Haircut & Styling</option>
+
+          <option>Hair Colour / Balayage</option>
+
+          <option>Nails / Manicure / Pedicure</option>
+
+          <option>Waxing / Threading</option>
+
+          <option>Lashes / Brows</option>
+
+          <option>Other Service</option>
+
+        </select>
+
+        <label for="message">Additional Details</label>
+
+        <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
+
+        <button class="btn" type="submit">Send Booking Enquiry on WhatsApp ↗</button>
+
+        <p id="formNote" style="font-size:11px;color:#776a6c;margin-top:12px">Your request will open WhatsApp. Your appointment is confirmed only after the salon responds.</p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div>
+
+        <div class="logo">Ruby Beauty Clinic<span>Ruby Makeover</span></div>
+
+        <p>Your beauty destination in Muzaffarnagar.</p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact">Contact</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © <span id="year"></span> Ruby Beauty Clinic – Ruby Makeover. All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/?text=Hello%20Ruby%20Beauty%20Clinic%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment." target="_blank" rel="noopener" aria-label="Contact on WhatsApp">☏ WhatsApp</a>
+
+<script>
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Set the earliest selectable appointment date to today.
+
+const dateField = document.getElementById('date');
+
+const today = new Date();
+
+dateField.min = [
+
+  today.getFullYear(),
+
+  String(today.getMonth() + 1).padStart(2, '0'),
+
+  String(today.getDate()).padStart(2, '0')
+
+].join('-');
+
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+
+  event.preventDefault();
+
+  // IMPORTANT: Replace this placeholder with the salon's actual WhatsApp number.
+
+  const salonWhatsAppNumber = '91XXXXXXXXXX';
+
+  if (!/^91\d{10}$/.test(salonWhatsAppNumber)) {
+
+    alert('Website owner: Please replace 91XXXXXXXXXX in the HTML code with the salon WhatsApp number, including country code 91.');
+
+    return;
+
+  }
+
+  const name = document.getElementById('name').value.trim();
+
+  const phone = document.getElementById('phone').value.trim();
+
+  const date = document.getElementById('date').value;
+
+  const service = document.getElementById('service').value;
+
+  const message = document.getElementById('message').value.trim();
+
+  const text = [
+
+    'Hello Ruby Beauty Clinic - Ruby Makeover!',
+
+    '',
+
+    'I would like to enquire about an appointment.',
+
+    'Name: ' + name,
+
+    'My Phone: ' + phone,
+
+    'Preferred Date: ' + date,
+
+    'Service: ' + service,
+
+    'Additional Details: ' + (message || 'None'),
+
+    '',
+
+    'Please confirm availability and pricing.'
+
+  ].join('\n');
+
+  window.open(
+
+    'https://wa.me/' + salonWhatsAppNumber + '?text=' + encodeURIComponent(text),
+
+    '_blank',
+
+    'noopener'
+
+  );
+
+});
+
+</script>
+
+</body>
+
+</html>
